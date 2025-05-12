@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice d'approfondissement sur les fonctions affines</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Exercice interactif sur les fonctions affines</h1>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <div id="exercise-content">
+            <h2>Exercice 1</h2>
+            
+            <div id="question1" class="question current">
+                <p><strong>1. Placer les points A(-3; 2) et B(5; 2).</strong></p>
+                <p>Visualisez ces points dans votre esprit (ou sur une feuille de papier ou sur <a href="https://www.geogebra.org/classic" target="_blank">Geogebra</a>) sur un plan cartésien.</p>
+                <textarea id="answer1" rows="2" cols="40" placeholder="Décrivez brièvement où se trouvent ces points"></textarea>
+                <div>
+                    <button class="help-btn" onclick="showHelp(1)">Besoin d'aide ?</button>
+                    <button class="submit-btn" onclick="submitAnswer(1)">Soumettre</button>
+                </div>
+                <div id="help1" class="help-content">
+                    <p>Pour placer un point dans un plan cartésien, on utilise ses coordonnées (x, y):</p>
+                    <p>- Le point A(-3; 2) se trouve à 3 unités à gauche de l'origine sur l'axe des x et 2 unités au-dessus sur l'axe des y.</p>
+                    <p>- Le point B(5; 2) se trouve à 5 unités à droite de l'origine sur l'axe des x et 2 unités au-dessus sur l'axe des y.</p>
+                </div>
+                <div id="qcm1" class="qcm-options">
+                    <p><strong>Choisissez la réponse correcte :</strong></p>
+                    <div class="qcm-option" onclick="selectOption(this, 1, 1)">Les points A et B se trouvent sur une droite horizontale parallèle à l'axe des abscisses.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 1, 2)">Les points A et B se trouvent sur une droite verticale parallèle à l'axe des ordonnées.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 1, 3)">Les points A et B forment une droite oblique avec une pente positive.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 1, 4)">Les points A et B forment une droite oblique avec une pente négative.</div>
+                </div>
+                <div id="feedback1" class="feedback"></div>
+                <div id="solution1" class="solution">
+                    <p><strong>Solution :</strong> Les points A(-3; 2) et B(5; 2) se trouvent sur une droite horizontale parallèle à l'axe des abscisses, car ils ont la même ordonnée y = 2.</p>
+                </div>
+                <button id="next1" class="next-btn" style="display: none;" onclick="nextQuestion(1)">Question suivante</button>
+            </div>
+
+            <div id="question2" class="question" style="display: none;">
+                <p><strong>2. Existe-t-il une fonction f dont la droite (AB) serait la représentation graphique ?</strong></p>
+                <p>Si oui, donnez son expression et précisez s'il s'agit d'une fonction affine, linéaire ou autre. Expliquez votre démarche.</p>
+                <textarea id="answer2" rows="4" placeholder="Votre réponse et démarche..."></textarea>
+                <div>
+                    <button class="help-btn" onclick="showHelp(2)">Besoin d'aide ?</button>
+                    <button class="submit-btn" onclick="submitAnswer(2)">Soumettre</button>
+                </div>
+                <div id="help2" class="help-content">
+                    <p>Pour qu'une droite soit la représentation graphique d'une fonction, chaque valeur de x ne doit correspondre qu'à une seule valeur de y.</p>
+                    <p>Analysez la droite (AB) : est-elle verticale ou non ? Une droite verticale peut-elle représenter une fonction ?</p>
+                    <p>Si la droite n'est pas verticale, quelle est son équation ? Observez les coordonnées y des points A et B.</p>
+                </div>
+                <div id="qcm2" class="qcm-options">
+                    <p><strong>Choisissez la réponse correcte :</strong></p>
+                    <div class="qcm-option" onclick="selectOption(this, 2, 1)">Non, il n'existe pas de fonction dont la droite (AB) serait la représentation graphique.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 2, 2)">Oui, il s'agit de la fonction affine f(x) = 0,25x + 2,75</div>
+                    <div class="qcm-option" onclick="selectOption(this, 2, 3)">Oui, il s'agit de la fonction constante f(x) = 2</div>
+                    <div class="qcm-option" onclick="selectOption(this, 2, 4)">Oui, il s'agit de la fonction linéaire f(x) = 2x</div>
+                </div>
+                <div id="feedback2" class="feedback"></div>
+                <div id="solution2" class="solution">
+                    <p><strong>Solution :</strong> Oui, il existe une fonction f dont la représentation est la droite (AB) : il s'agit de la fonction constante définie par f(x) = 2.</p>
+                    <p>Explication : Les points A(-3; 2) et B(5; 2) ont la même ordonnée y = 2, ce qui signifie que la droite (AB) est horizontale. Pour tout point de cette droite, l'image par f est toujours 2, quelle que soit la valeur de x. C'est donc une fonction constante f(x) = 2.</p>
+                </div>
+                <button id="next2" class="next-btn" style="display: none;" onclick="nextQuestion(2)">Question suivante</button>
+            </div>
+
+            <div id="question3" class="question" style="display: none;">
+                <p><strong>3. Où peut-on placer un troisième point C pour que le triangle ABC soit rectangle en A ?</strong></p>
+                <p>Expliquez votre démarche.</p>
+                <textarea id="answer3" rows="4" placeholder="Votre réponse et démarche..."></textarea>
+                <div>
+                    <button class="help-btn" onclick="showHelp(3)">Besoin d'aide ?</button>
+                    <button class="submit-btn" onclick="submitAnswer(3)">Soumettre</button>
+                </div>
+                <div id="help3" class="help-content">
+                    <p>Pour qu'un triangle soit rectangle en A, les droites (AB) et (AC) doivent être perpendiculaires.</p>
+                    <p>Rappel : deux droites sont perpendiculaires si leurs coefficients directeurs a₁ et a₂ vérifient a₁ × a₂ = -1.</p>
+                    <p>Quelle est la direction de la droite (AB) ? Quelle direction doit avoir (AC) pour être perpendiculaire à (AB) ?</p>
+                </div>
+                <div id="qcm3" class="qcm-options">
+                    <p><strong>Choisissez la réponse correcte :</strong></p>
+                    <div class="qcm-option" onclick="selectOption(this, 3, 1)">Le point C peut être placé à n'importe quelle position tant que ses coordonnées sont (-3, y) avec y ≠ 2.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 3, 2)">Le point C doit avoir les coordonnées (x, -3) avec x ≠ -3.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 3, 3)">Le point C doit avoir les coordonnées (0, 0) pour que le triangle soit rectangle en A.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 3, 4)">Le point C doit se trouver sur la droite d'équation y = -x + b passant par A.</div>
+                </div>
+                <div id="feedback3" class="feedback"></div>
+                <div id="solution3" class="solution">
+                    <p><strong>Solution :</strong> On peut placer le point C à la même abscisse que A, c'est-à-dire x = -3, et à n'importe quelle ordonnée sauf y = 2 où se situe déjà le point A.</p>
+                    <p>Explication : Comme la droite (AB) est horizontale (parallèle à l'axe des abscisses), pour que la droite (AC) soit perpendiculaire, il faut qu'elle soit verticale (parallèle à l'axe des ordonnées). Donc C doit avoir la même abscisse que A, soit x = -3, et une ordonnée différente de celle de A.</p>
+                </div>
+                <button id="next3" class="next-btn" style="display: none;" onclick="nextQuestion(3)">Question suivante</button>
+            </div>
+
+            <div id="question4" class="question" style="display: none;">
+                <p><strong>4. Existe-t-il une fonction g dont la droite (AC) serait la représentation graphique ?</strong></p>
+                <p>Si oui, donnez son expression et précisez s'il s'agit d'une fonction affine, linéaire ou autre. Expliquez votre démarche.</p>
+                <textarea id="answer4" rows="4" placeholder="Votre réponse et démarche..."></textarea>
+                <div>
+                    <button class="help-btn" onclick="showHelp(4)">Besoin d'aide ?</button>
+                    <button class="submit-btn" onclick="submitAnswer(4)">Soumettre</button>
+                </div>
+                <div id="help4" class="help-content">
+                    <p>Rappelez-vous : pour qu'une courbe soit la représentation graphique d'une fonction, à chaque valeur de x ne doit correspondre qu'une seule valeur de y.</p>
+                    <p>Réfléchissez à la position de la droite (AC). D'après la question précédente, quelle est sa direction ?</p>
+                    <p>Une droite verticale peut-elle représenter une fonction ? Pourquoi ?</p>
+                </div>
+                <div id="qcm4" class="qcm-options">
+                    <p><strong>Choisissez la réponse correcte :</strong></p>
+                    <div class="qcm-option" onclick="selectOption(this, 4, 1)">Oui, il s'agit de la fonction affine g(x) = -3</div>
+                    <div class="qcm-option" onclick="selectOption(this, 4, 2)">Oui, il s'agit de la fonction constante g(x) = -3</div>
+                    <div class="qcm-option" onclick="selectOption(this, 4, 3)">Non, il n'existe pas de fonction dont la droite (AC) serait la représentation graphique</div>
+                    <div class="qcm-option" onclick="selectOption(this, 4, 4)">Oui, il s'agit de la fonction g(x) = ax + b avec des coefficients à déterminer</div>
+                </div>
+                <div id="feedback4" class="feedback"></div>
+                <div id="solution4" class="solution">
+                    <p><strong>Solution :</strong> Non, il n'existe pas de fonction dont la droite (AC) serait la représentation graphique.</p>
+                    <p>Explication : La droite (AC) est verticale (parallèle à l'axe des ordonnées) puisque tous ses points ont la même abscisse x = -3. Or, pour une fonction, chaque valeur de x ne doit correspondre qu'à une seule valeur de y (unicité de l'image). Dans le cas d'une droite verticale, une même valeur de x correspond à une infinité de valeurs de y, ce qui contredit la définition d'une fonction.</p>
+                </div>
+                <button id="next4" class="next-btn" style="display: none;" onclick="nextQuestion(4)">Question suivante</button>
+            </div>
+
+            <div id="question5" class="question" style="display: none;">
+                <p><strong>5. Existe-t-il une fonction h dont la droite (CB) serait la représentation graphique ?</strong></p>
+                <p>Si oui, donnez son expression et précisez s'il s'agit d'une fonction affine, linéaire ou autre. Expliquez votre démarche.</p>
+                <textarea id="answer5" rows="4" placeholder="Votre réponse et démarche..."></textarea>
+                <div>
+                    <button class="help-btn" onclick="showHelp(5)">Besoin d'aide ?</button>
+                    <button class="submit-btn" onclick="submitAnswer(5)">Soumettre</button>
+                </div>
+                <div id="help5" class="help-content">
+                    <p>Considérons un point C spécifique, par exemple C(-3, 8).</p>
+                    <p>Pour trouver la fonction h, il faut déterminer l'équation de la droite passant par C et B.</p>
+                    <p>Commencez par calculer le coefficient directeur de la droite (CB), puis déterminez son ordonnée à l'origine.</p>
+                </div>
+                <div id="qcm5" class="qcm-options">
+                    <p><strong>Choisissez la réponse correcte :</strong></p>
+                    <div class="qcm-option" onclick="selectOption(this, 5, 1)">Non, il n'existe pas de fonction dont la droite (CB) serait la représentation graphique.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 5, 2)">Oui, il s'agit de la fonction affine h(x) = -0,75x + 5,75.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 5, 3)">Oui, il s'agit de la fonction linéaire h(x) = -0,75x.</div>
+                    <div class="qcm-option" onclick="selectOption(this, 5, 4)">Oui, il s'agit de la fonction constante h(x) = 5,75.</div>
+                </div>
+                <div id="feedback5" class="feedback"></div>
+                <div id="solution5" class="solution">
+                    <p><strong>Solution :</strong> Oui, il existe une fonction affine h dont la droite (CB) serait la représentation graphique.</p>
+                    <p>En fixant C(-3, 8) et avec B(5, 2), le coefficient directeur est :</p>
+                    <p>a = (y<sub>C</sub> - y<sub>B</sub>)/(x<sub>C</sub> - x<sub>B</sub>) = (8 - 2)/(-3 - 5) = 6/(-8) = -0,75</p>
+                    <p>L'ordonnée à l'origine b se trouve avec l'équation y = ax + b en utilisant les coordonnées du point C :</p>
+                    <p>8 = -0,75 × (-3) + b</p>
+                    <p>8 = 2,25 + b</p>
+                    <p>b = 5,75</p>
+                    <p>Donc h(x) = -0,75x + 5,75</p>
+                    <p>Note : Si on prend un autre point C, on obtient une fonction différente.</p>
+                </div>
+                <button id="next5" class="next-btn" style="display: none;" onclick="nextQuestion(5)">Voir la solution complète</button>
+            </div>
+
+            <div id="finalSolution" style="display: none;">
+                <h2>Solution complète</h2>
+                <p>Bravo ! Vous avez terminé l'exercice. Voici la solution complète :</p>
+                
+                <div class="solution" style="display: block;">
+                    <p><strong>1.</strong> Les points A(-3; 2) et B(5; 2) sont situés sur une droite horizontale parallèle à l'axe des abscisses.</p>
+                    
+                    <p><strong>2.</strong> Oui, il existe une fonction f dont la représentation est la droite (AB) : il s'agit de la fonction constante définie par f(x) = 2, car tous les points de cette droite ont la même ordonnée y = 2.</p>
+                    
+                    <p><strong>3.</strong> On peut placer le point C à la même abscisse que A, c'est-à-dire x = -3, et à n'importe quelle ordonnée sauf y = 2 où se situe déjà le point A. En effet, comme la droite (AB) est horizontale (parallèle à l'axe des abscisses), pour que la droite (AC) soit perpendiculaire, il faut qu'elle soit verticale (parallèle à l'axe des ordonnées).</p>
+                    
+                    <p><strong>4.</strong> Non, il n'existe pas de fonction dont la droite (AC) serait la représentation graphique. La droite (AC) est verticale (tous ses points ont la même abscisse x = -3), or pour une fonction, chaque valeur de x ne doit correspondre qu'à une seule valeur de y. Dans le cas d'une droite verticale, une même valeur de x correspond à une infinité de valeurs de y, ce qui contredit la définition d'une fonction.</p>
+                    
+                    <p><strong>5.</strong> En fixant C(-3, 8) et avec B(5, 2), on peut déterminer une fonction affine h dont la droite (CB) serait la représentation graphique :</p>
+                    <p>Coefficient directeur : a = (y<sub>C</sub> - y<sub>B</sub>)/(x<sub>C</sub> - x<sub>B</sub>) = (8 - 2)/(-3 - 5) = 6/(-8) = -0,75</p>
+                    <p>Ordonnée à l'origine : 8 = -0,75 × (-3) + b → b = 5,75</p>
+                    <p>Donc h(x) = -0,75x + 5,75</p>
+                </div>
+                
+                <div class="geogebra-container" id="geogebra">
+                    <iframe scrolling="no" title="Triangle rectangle ABC" src="https://www.geogebra.org/calculator/ukruatxh?embed" width="100%" height="500" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
